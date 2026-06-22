@@ -7,9 +7,9 @@ services:
     container_name: messenger_db
     restart: always
     environment:
-      POSTGRES_USER: icq_admin
-      POSTGRES_PASSWORD: super_secret_password_123
-      POSTGRES_DB: messenger_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     volumes:
       - pgdata:/var/lib/postgresql/data
     # Порт наружу не выводим ради безопасности, БД доступна только внутри докера
